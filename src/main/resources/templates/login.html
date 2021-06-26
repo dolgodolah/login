@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header" />
+<style>
+  .fieldError {
+    border-color: #bd2130;
+  }
+</style>
+<body>
+<div class="container">
+  <div th:if="${param.error}" style="color:red;">
+    <p>로그인에 실패하였습니다. 이메일과 비밀번호를 확인해주세요.</p>
+  </div>
+  <form method="post" th:action="@{/login}" id="loginForm">
+    <div class="form-group">
+      <label for="email">이메일</label>
+      <input class="form-control" type="email" name="email" id="email">
+    </div></br>
+
+    <div class="form-group">
+      <label for="password">비밀번호</label>
+      <input class="form-control" type="password" name="password" id="password">
+    </div></br>
+
+
+    <input type="submit" value="로그인">
+
+
+  </form>
+
+</div> <!-- /container -->
+</body>
+</html>

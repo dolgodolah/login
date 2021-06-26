@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header" />
+<style>
+  .fieldError {
+    border-color: #bd2130;
+  }
+</style>
+<body>
+<div class="container">
+  <form method="post" th:action="@{/myinfo}" th:object="${userForm}">
+    <input type="hidden" th:field="*{id}">
+    <div class="form-group">
+      <label for="email">이메일</label>
+      <input class="form-control" th:field="*{email}" id="email" type="email" disabled>
+    </div></br>
+
+    <div class="form-group">
+      <label for="password">비밀번호</label>
+      <input class="form-control" th:field="*{password}" id="password" type="password">
+    </div></br>
+
+    <div class="form-group">
+      <label for="name">이름</label>
+      <input class="form-control" th:field="*{name}" id="name" type="text">
+    </div></br>
+
+
+    <input type="submit" value="수정">
+
+  </form>
+</div> <!-- /container -->
+</body>
+</html>
