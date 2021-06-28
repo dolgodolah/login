@@ -8,8 +8,10 @@
 </style>
 <body>
 <div class="container">
-    <div th:if="${error}" style="color:red;">
-        <p th:text="${error}"></p>
+    <div th:replace="fragments/bodyHeader :: bodyHeader" />
+    <h2>회원가입</h2>
+    <div style="color:red;">
+        <p th:text="${errorMessage}"></p>
     </div>
     <form method="post" th:action="@{/signup}" id="signupForm" th:object="${userForm}">
         <div class="form-group">
@@ -29,7 +31,7 @@
             <input class="form-control" type="text" th:field="*{name}">
         </div></br>
 
-        <input type="submit" value="회원가입">
+        <button type="submit" class="btn btn-lg btn-secondary">회원가입</button>
 
 
 

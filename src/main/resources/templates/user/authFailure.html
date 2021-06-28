@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments/header :: header">
+  <title>Hello</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div class="container">
+  <div th:replace="fragments/bodyHeader :: bodyHeader" />
+  <h2>이미 인증이 완료 되었거나, 회원가입 이메일 인증 시간이 만료되었습니다.</h2>
+  <form method="get" th:action="@{/sendAuthEmail}">
+    <input type="hidden" name="email" th:value="${email}">
+    <input class="btn btn-lg btn-secondary" type="submit" value="이메일 인증 다시하기">
+  </form>
+
+</div>
+</div> <!-- /container -->
+</body>
+</html>

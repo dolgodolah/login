@@ -1,15 +1,17 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments/header :: header" />
-<style>
-  .fieldError {
-    border-color: #bd2130;
-  }
-</style>
+<!DOCTYPE HTML>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments/header :: header">
+  <title>Hello</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
 <body>
 <div class="container">
   <div th:replace="fragments/bodyHeader :: bodyHeader" />
   <h2>로그인</h2>
+  <div style="color:red;">
+    <p th:text="${#request.getAttribute('errorMessage')}"></p>
+  </div>
+
   <form method="post" th:action="@{/login}" id="loginForm">
     <div class="form-group">
       <label for="email">이메일</label>
@@ -25,6 +27,8 @@
     <a class="btn btn-lg btn-secondary" href="/signup">회원 가입</a>
   </form>
 
+
+</div>
 </div> <!-- /container -->
 </body>
 </html>

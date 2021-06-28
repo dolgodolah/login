@@ -8,6 +8,8 @@
 </style>
 <body>
 <div class="container">
+  <div th:replace="fragments/bodyHeader :: bodyHeader" />
+  <h2>내 정보</h2>
   <form method="post" th:action="@{/myinfo}" th:object="${userForm}">
     <input type="hidden" th:field="*{id}">
     <div class="form-group">

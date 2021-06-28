@@ -1,5 +1,6 @@
 package com.dolgodolah.login.dto;
 
+import com.dolgodolah.login.domain.Role;
 import com.dolgodolah.login.domain.User;
 import lombok.*;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -25,6 +26,7 @@ public class UserForm {
                 .email(email)
                 .password(passwordEncoder.encode(password))
                 .name(name)
+                .role(Role.GUEST)
                 .build();
     }
 }
